@@ -1,18 +1,36 @@
 const express = require('express');
 const router = express.Router();
-// const UserModel= require("../models/userModel.js")
-const BookController= require("../controllers/bookController5")
 
-router.get("/test-me", function (req, res) {
-    res.send("My first ever api!")
-})
+//========================= controller(logic module) required ===================================
 
 
-router.post("/autherName", BookController.createAuther )
-router.post("/BookName", BookController.createBook)
-router.get("/bookListById", BookController.bookListById)
-router.get("/updatePrice", BookController.updatePrice)
-router.get("/bookFindByPrice", BookController.bookFindByPrice)
+const grnController = require('../controllers/grnContro')
+
+const orderController =require('../controllers/orderController')
+
+//=========================== Grn router ==========================================================
+
+router.post("/createGrn", grnController.createGrn )
+
+router.get("/getGrn/:grnId" , grnController.getGrn)
+
+router.put("/updateItem/:grnId" , grnController.updateItem )
+
+router.delete("/deleteGrn/:grnId" , grnController.deleteGrn)
+
+
+// ===================================== Order router ================================================
+
+
+const orderController =require('../controllers/orderController')
+
+router.post("/orderCreate", orderController.orderCreate )
+
+router.get("/getOrder/:orderId" , orderController.getOrder)
+
+router.put("/orderUpdate/:orderId" , orderController.orderUpdate )
+
+router.delete("/deleteOrder/:orderId" , orderController.deleteOrder)
 
 
 
