@@ -9,16 +9,11 @@ const objectId = mongoose.Schema.Type.objectId
 const grnSchema = new mongoose.Schema({
 
     vendorName:{
-        fname:{
+      
         type:String,
         required:true,
         lowercase:true
-        },
-        lname:{
-            type:String,
-            required:true,
-            lowercase:true
-            }
+       
     },
 
     invoiceNumber:{
