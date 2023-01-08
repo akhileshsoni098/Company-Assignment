@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 2.  grnLineItem
  {id,createdAt, updatedAt,deleted,  productName, quantity, stockPrice }
 */
-const grnLineItemSchema = new mongoose.Schema( [{
+const grnLineItemSchema = new mongoose.Schema( {
 
     productName:{
         type:String,
@@ -14,7 +14,7 @@ const grnLineItemSchema = new mongoose.Schema( [{
     type:Number,
     required:true
     },
-    
+
     stockPrice:{
         type:Number,
         required:true
@@ -22,7 +22,7 @@ const grnLineItemSchema = new mongoose.Schema( [{
 
     updatedAt:Date
 
-}],  
+},  
 
 {
     timestams:true
